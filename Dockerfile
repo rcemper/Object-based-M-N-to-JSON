@@ -6,16 +6,12 @@ USER root
 WORKDIR /opt/irisapp
 RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} /opt/irisapp
 
-USER irisowner
+USER ${ISC_PACKAGE_MGRUSER}
 
-COPY  Installer.cls .
-COPY  JSONExportManyToMany src
-COPY irissession.sh /
-SHELL ["/irissession.sh"]
+COPY src src
+COPY module.xml module.xml
+COPY iris.script iris.script
 
-RUN \
-  do $SYSTEM.OBJ.Load("Installer.cls", "ck") \
-  set sc = ##class(App.Installer).setup() 
-
-# bringing the standard shell back
-SHELL ["/bin/bash", "-c"]
+RUN iris start IRIS \
+    && iris session IRIS < iris.script \
+    && iris stop IRIS quietly 
