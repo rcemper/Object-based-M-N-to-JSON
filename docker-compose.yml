@@ -5,6 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: always
+    command: --ISCAgent false
     ports:
       - 41773:1972
       - 42773:52773
