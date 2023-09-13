@@ -3,7 +3,7 @@
 # JSONExport-ManyToMany-AD
 Sample for %JSONExport against a class with Many to Many Relationship   
 
-This package was adopted from the [orphaned predecessor](https://openexchange.intersystems.com/package/JSONExportManyToMany))   
+This package was adopted from the [orphaned predecessor](https://openexchange.intersystems.com/package/JSONExportManyToMany)   
 - fixed dockerfile to be version independent   
 - fixed pending mapping of SuperServer   
 - added support for IPM  
