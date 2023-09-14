@@ -68,4 +68,4 @@ Likewise, when exporting from Teacher, the relationship to Student is followed t
 TeacherStudent and details of the Student are exported.   
 
 [Demo Server SMP](https://json-export-many-many.demo.community.intersystems.com/csp/sys/UtilHome.csp)    
-[Demo Server WebTerminal](https://json-export-many-manyt.demo.community.intersystems.com/terminal/)   
+[Demo Server WebTerminal](https://json-export-many-many.demo.community.intersystems.com/terminal/)   
