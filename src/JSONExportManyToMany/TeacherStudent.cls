@@ -1,10 +1,7 @@
 Class JSONExportManyToMany.TeacherStudent Extends (%Persistent, %JSON.Adaptor)
 {
-
 Property ID As %Integer [ Identity ];
-
 Property Teacher As JSONExportManyToMany.Teacher [ Calculated ];
-
 Property Student As JSONExportManyToMany.Student [ Calculated ];
 
 XData Student
@@ -45,9 +42,9 @@ Method StudentGet() As JSONExportManyToMany.Student
 
 ClassMethod Populate()
 {
-	w ##class(JSONExportManyToMany.Student).%DeleteExtent(),!
-	w ##class(JSONExportManyToMany.Teacher).%DeleteExtent(),!
-	w ##class(JSONExportManyToMany.TeacherStudent).%DeleteExtent(),!
+	write ##class(JSONExportManyToMany.Student).%DeleteExtent()," > ",
+		##class(JSONExportManyToMany.Teacher).%DeleteExtent()," > ",
+		##class(JSONExportManyToMany.TeacherStudent).%DeleteExtent(),!
 	set student1=##class(JSONExportManyToMany.Student).%New()
 	set student2=##class(JSONExportManyToMany.Student).%New()
 	set student1.Name="Peter"
@@ -59,46 +56,48 @@ ClassMethod Populate()
 	set teacher2.Name="Teacher2Name"
 	set teacher3.Name="Teacher3Name"
 	set ts1=##class(JSONExportManyToMany.TeacherStudent).%New()
-	w ts1.%Save(),!
+	write ts1.%Save()," > "
 	set ts2=##class(JSONExportManyToMany.TeacherStudent).%New()
-	w ts2.%Save(),!
+	write ts2.%Save()," > "
 	set ts3=##class(JSONExportManyToMany.TeacherStudent).%New()
-	w ts3.%Save(),!
+	write ts3.%Save()," > "
 	set ts4=##class(JSONExportManyToMany.TeacherStudent).%New()
-	w ts4.%Save(),!
-	d student1.Teachers.Insert(ts1)
-	d teacher1.Students.Insert(ts1)
-	d student1.Teachers.Insert(ts2)
-	d teacher2.Students.Insert(ts2)
-	d student2.Teachers.Insert(ts3)
-	d teacher1.Students.Insert(ts3)
-	d student2.Teachers.Insert(ts4)
-	d teacher3.Students.Insert(ts4)
-	w student1.%Save(),!
-	w student2.%Save(),!
-	w teacher1.%Save(),!
-	w teacher2.%Save(),!
-	w teacher3.%Save(),!
+	write ts4.%Save()," > ",!
+	do student1.Teachers.Insert(ts1)
+	do teacher1.Students.Insert(ts1)
+	do student1.Teachers.Insert(ts2)
+	do teacher2.Students.Insert(ts2)
+	do student2.Teachers.Insert(ts3)
+	do teacher1.Students.Insert(ts3)
+	do student2.Teachers.Insert(ts4)
+	do teacher3.Students.Insert(ts4)
+	write student1.%Save()," > "
+	write student2.%Save()," > "
+	write teacher1.%Save()," > "
+	write teacher2.%Save()," > "
+	write teacher3.%Save()," > ",!
 }
 
 ClassMethod Test()
 {
 	set student1=##class(JSONExportManyToMany.Student).%OpenId(1)
-	d student1.%JSONExport("Student")
-	w !,!
+	do student1.%JSONExportToString(.%rcc,"Student"),show
+
 	set student2=##class(JSONExportManyToMany.Student).%OpenId(2)
-	d student2.%JSONExport("Student")
-	w !,!
+	d student2.%JSONExport("Student"),show
 	
 	set teacher1=##class(JSONExportManyToMany.Teacher).%OpenId(1)
-	d teacher1.%JSONExport("Teacher")
-	w !,!
+	do teacher1.%JSONExportToString(.%rcc,"Teacher"),show
+	
 	set teacher2=##class(JSONExportManyToMany.Teacher).%OpenId(2)
-	d teacher2.%JSONExport("Teacher")
-	w !,!
+	do teacher2.%JSONExportToString(.%rcc,"Teacher"),show
+	
 	set teacher3=##class(JSONExportManyToMany.Teacher).%OpenId(3)
-	d teacher3.%JSONExport("Teacher")
-	w !,!
+	do teacher3.%JSONExportToString(.%rcc,"Teacher"),show
+show
+	write !,%rcc,!
+	do ##class(%JSON.Formatter).%New().Format(%rcc)
+	quit
 }
 
 Storage Default
