@@ -20,12 +20,12 @@ Run the container
  ````
 docker compose up -d
 ````
-To follow the startup you may use
+To follow the startup you may use    
 ````
 docker compose logs -f
 ````
 ### Testing  
-After installing this sample, the following two commands can be run from terminal or console
+After installing this sample, the following two commands can be run from terminal or console   
 
 ````
 docker-compose exec iris iris session iris    
@@ -141,11 +141,11 @@ do ##class(JSONExportManyToMany.TeacherStudent).Test()
 USER>
 </pre>
 
-You will notice here that when exporting from Student (First 2 output lines),    
+You will notice here that when exporting from Student (First 2 output lines),       
 the relationship to Teacher is followed through TeacherStudent and details of the Teacher are exported.    
 
 Likewise, when exporting from Teacher, the relationship to Student is followed through    
 TeacherStudent and details of the Student are exported.   
 
-[Demo Server SMP](https://object-m-n-to-json.demo.community.intersystems.com/csp/sys/UtilHome.csp)    
-[Demo Server WebTerminal](https://object-m-n-to-json.demo.community.intersystems.com/terminal/)   
+[Demo Server SMP](https://object-m-n-to-json.demo.community.intersystems.com/csp/sys/UtilHome.csp)     
+[Demo Server WebTerminal](https://object-m-n-to-json.demo.community.intersystems.com/terminal/)    
