@@ -1,4 +1,4 @@
-[![Quality Gate Status](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2FJSONExport-ManyToMany-AD&metric=alert_status)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2FJSONExport-ManyToMany-AD)  
+[![Quality Gate Status](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2FObject-based-M-N-to-JSON&metric=alert_status)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2FObject-based-M-N-to-JSON) 
 
 ## Object-based-M-N-to-JSON
 Sample for %JSONExport against a class with N:N Relationship    
