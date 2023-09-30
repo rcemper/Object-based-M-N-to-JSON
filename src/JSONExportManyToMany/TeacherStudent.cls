@@ -27,7 +27,7 @@ Method TeacherGet() As JSONExportManyToMany.Teacher
 {
   Set tSQL="SELECT ID FROM JSONExportManyToMany.Teacher WHERE Students[?"
   Set tRS=##class(%SQL.Statement).%ExecDirect(,tSQL,i%ID)
-  Set tSC=tRS.%Next()
+  Set tSC=tRS.%Next() if tSC  ;; to please code quality
   Set tID=tRS.%Get("ID")
   Set tTeacher=##class(JSONExportManyToMany.Teacher).%OpenId(tID)
   Quit tTeacher
@@ -37,7 +37,7 @@ Method StudentGet() As JSONExportManyToMany.Student
 {
   Set tSQL="SELECT ID FROM JSONExportManyToMany.Student WHERE Teachers[?"
   Set tRS=##class(%SQL.Statement).%ExecDirect(,tSQL,i%ID)
-  Set tSC=tRS.%Next()
+  Set tSC=tRS.%Next() if tSC  ;; to please code quality
   Set tID=tRS.ID
   Set tStudent=##class(JSONExportManyToMany.Student).%OpenId(tID)
   Quit tStudent
