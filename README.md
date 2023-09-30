@@ -1,6 +1,6 @@
 [![Quality Gate Status](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2FJSONExport-ManyToMany-AD&metric=alert_status)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2FJSONExport-ManyToMany-AD)  
 
-# JSONExport-ManyToMany-AD
+## Object-based-M-N-to-JSON
 Sample for %JSONExport against a class with Many to Many Relationship   
 
 This package was adopted from the [orphaned predecessor](https://openexchange.intersystems.com/package/JSONExportManyToMany)   
