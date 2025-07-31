@@ -147,5 +147,3 @@ the relationship to Teacher is followed through TeacherStudent and details of th
 Likewise, when exporting from Teacher, the relationship to Student is followed through    
 TeacherStudent and details of the Student are exported.   
 
-[Demo Server SMP](https://object-m-n-to-json.demo.community.intersystems.com/csp/sys/UtilHome.csp)     
-[Demo Server WebTerminal](https://object-m-n-to-json.demo.community.intersystems.com/terminal/)    
